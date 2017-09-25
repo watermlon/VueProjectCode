@@ -20,6 +20,7 @@
 
 <script>
 import { Toast } from 'mint-ui'
+import apiline from '../../kits/common.js'
 	export default{
 		data(){
 			return {
@@ -31,7 +32,7 @@ import { Toast } from 'mint-ui'
 		},
 		methods:{
 			getnewslis(){
-				var url = 'http://182.254.146.100:8899/api/getnewslist'
+				var url = apiline.apiline + '/api/getnewslist'
 				this.$http.get(url).then(function(res){
 					var data = res.body;
 					if (data.status!=0) {

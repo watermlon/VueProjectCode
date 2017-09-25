@@ -52,6 +52,7 @@
 
 <script>
     import { Toast } from 'mint-ui'
+    import apiline from '../kits/common.js'
 	export default{
         data(){
             return {
@@ -64,7 +65,7 @@
         methods:{
             //ajax获取数据
             getImg(){
-                var url = 'http://182.254.146.100:8899/api/getlunbo'
+                var url = apiline.apiline+'/api/getlunbo'
                 this.$http.get(url).then(function(res){
                     var data = res.body;
                     if (data.status!=0) {

@@ -13,6 +13,7 @@
 <script>
 	import { Toast } from 'mint-ui';
 	import { Indicator } from 'mint-ui';
+	import apiline from '../../kits/common.js'
 	export default{
 		data(){
 			return {
@@ -27,7 +28,7 @@
 		},
 		methods:{
 			getinfo(){
-				var url = 'http://182.254.146.100:8899/api/getnew/'+this.id;
+				var url = apiline.apiline+'/api/getnew/'+this.id;
 				this.$http.get(url).then(function(res){
 					var data = res.body;
 					Indicator.close()
