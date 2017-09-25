@@ -6,7 +6,8 @@ import app from './app.vue';
 import vueRouter from 'vue-router';
 //导入自定义的组件
 import home from './component/home.vue';
-import newslist from './component/news/newslist.vue'
+import newslist from './component/news/newslist.vue';
+import newsinfo from './component/news/newsinfo.vue';
 //导入mint-ui
 import Mint from 'mint-ui';
 import '../node_modules/mint-ui/lib/style.min.css';
@@ -15,17 +16,24 @@ import '../statics/mui/css/mui.css';
 //导入公共样式
 import '../statics/css/common.css';
 //导入vue-resource
-import vueResource from 'vue-resource'
+import vueResource from 'vue-resource';
+//导入格式化时间的第三方类库
+import moment from 'moment';
+//自定义时间过滤器
+Vue.filter('datefmt', function(input, fmtstring){
+	return moment(input).format(fmtstring)
+})
 //在vue中绑定组件
 Vue.use(Mint);
 Vue.use(vueRouter);
-Vue.use(vueResource)
+Vue.use(vueResource);
 var router = new vueRouter({
 	linkActiveClass:'mui-active',
 	routes:[
 		{path:'',redirect:'/home'},
 		{path:'/home',component:home},
-		{path:'/news/newslist',component:newslist}
+		{path:'/news/newslist',component:newslist},
+		{path:'/news/newsinfo/:id',component:newsinfo}
 	]
 })
 new Vue({
