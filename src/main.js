@@ -6,6 +6,7 @@ import app from './app.vue';
 import vueRouter from 'vue-router';
 //导入自定义的组件
 import home from './component/home.vue';
+import newslist from './component/news/newslist.vue'
 //导入mint-ui
 import Mint from 'mint-ui';
 import '../node_modules/mint-ui/lib/style.min.css';
@@ -23,7 +24,8 @@ var router = new vueRouter({
 	linkActiveClass:'mui-active',
 	routes:[
 		{path:'',redirect:'/home'},
-		{path:'/home',component:home}
+		{path:'/home',component:home},
+		{path:'/news/newslist',component:newslist}
 	]
 })
 new Vue({
