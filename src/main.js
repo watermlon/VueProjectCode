@@ -11,6 +11,7 @@ import newsinfo from './component/news/newsinfo.vue';
 import shopcar from './component/shopcar/car.vue';
 import photolist from './component/photo/photolist.vue';
 import photoinfo from './component/photo/photoinfo.vue';
+import VuePreview from 'vue-preview';
 //导入mint-ui
 import Mint from 'mint-ui';
 import '../node_modules/mint-ui/lib/style.min.css';
@@ -30,6 +31,7 @@ Vue.filter('datefmt', function(input, fmtstring){
 Vue.use(Mint);
 Vue.use(vueRouter);
 Vue.use(vueResource);
+Vue.use(VuePreview);
 var router = new vueRouter({
 	linkActiveClass:'mui-active',
 	routes:[

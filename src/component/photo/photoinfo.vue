@@ -8,35 +8,8 @@
 		<!-- 缩略图 -->
 		<div class="mui-content">
             <ul class="mui-table-view mui-grid-view mui-grid-9">
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                    <router-link to="/news/newslist">
-                        <!-- <span class="mui-icon mui-icon-home"></span> -->
-                    </router-link>
-                </li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                    <router-link to="/photo/photolist">
-                        <!-- <span class="mui-icon mui-icon-email"></span> -->
-                    </router-link>
-                </li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                    <router-link to="/goods/goodslist">
-                        <!-- <span class="mui-icon mui-icon-chatbubble"></span> -->
-                    </router-link>
-                </li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                    <router-link to="/feedback">
-                        <!-- <span class="mui-icon mui-icon-location"></span> -->
-                    </router-link>
-                </li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                    <router-link to="/video">
-                        <!-- <span class="mui-icon mui-icon-search"></span> -->
-                    </router-link>
-                </li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                    <router-link to="/callme">
-                        <!-- <span class="mui-icon mui-icon-phone"></span> -->
-                    </router-link>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" v-for="(item, index) in list">
+                    <img class="preview-img" :src="item.src" height="100" @click="$preview.open(index, list)">
                 </li>
             </ul>
         </div>
@@ -57,12 +30,14 @@ import comment from '../subcom/comment.vue'
 		data(){
 			return{
 				id:0,
-				imgdata:{}
+				imgdata:{},
+				list:[]
 			}
 		},
 		created(){
 			this.id=this.$route.params.id
 			this.getdata();
+			this.getminimg();
 		},
 		methods:{
 			getdata(){
@@ -73,8 +48,22 @@ import comment from '../subcom/comment.vue'
 						Toast(data.message);
 						return
 					}
-					console.log(data.message)
-					this.imgdata=data.message[0]
+					this.imgdata =  data.message[0];
+				})
+			},
+			getminimg(){
+				var url = apiline.apiline+'/api/getthumimages/'+this.id;
+				this.$http.get(url).then(function(res){
+					var data = res.body;
+					if(data.status!=0){
+						Toast(data.message);
+						return
+					}
+					this.list=data.message;
+					this.list.forEach(function(item){
+						item['w']=450;
+						item['h']=450;
+					})
 				})
 			}
 		}

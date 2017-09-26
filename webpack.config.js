@@ -20,7 +20,7 @@ module.exports={
 				loader:'style-loader!css-loader!less-loader'
 			},
 			{
-				test:/\.(png|jpg|ttf)$/,
+				test:/\.(png|jpg|ttf|svg|gif)$/,
 				loader:'url-loader?limit=40000'
 			},
 			/*{
