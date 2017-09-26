@@ -11,6 +11,8 @@ import newsinfo from './component/news/newsinfo.vue';
 import shopcar from './component/shopcar/car.vue';
 import photolist from './component/photo/photolist.vue';
 import photoinfo from './component/photo/photoinfo.vue';
+import goodslist from './component/goods/goodslist.vue';
+//导入vuePreview
 import VuePreview from 'vue-preview';
 //导入mint-ui
 import Mint from 'mint-ui';
@@ -41,7 +43,8 @@ var router = new vueRouter({
 		{path:'/news/newsinfo/:id',component:newsinfo},
 		{path:'/shopcar',component:shopcar},
 		{path:'/photo/photolist',component:photolist},
-		{path:'/photo/photoinfo/:id',component:photoinfo}
+		{path:'/photo/photoinfo/:id',component:photoinfo},
+		{path:'/goods/goodslist',component:goodslist}
 	]
 })
 new Vue({
