@@ -8,6 +8,8 @@ import vueRouter from 'vue-router';
 import home from './component/home.vue';
 import newslist from './component/news/newslist.vue';
 import newsinfo from './component/news/newsinfo.vue';
+import shopcar from './component/shopcar/car.vue';
+import photolist from './component/photo/photolist.vue';
 //导入mint-ui
 import Mint from 'mint-ui';
 import '../node_modules/mint-ui/lib/style.min.css';
@@ -33,7 +35,9 @@ var router = new vueRouter({
 		{path:'',redirect:'/home'},
 		{path:'/home',component:home},
 		{path:'/news/newslist',component:newslist},
-		{path:'/news/newsinfo/:id',component:newsinfo}
+		{path:'/news/newsinfo/:id',component:newsinfo},
+		{path:'/shopcar',component:shopcar},
+		{path:'/photo/photolist',component:photolist}
 	]
 })
 new Vue({

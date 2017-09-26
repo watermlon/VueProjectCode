@@ -4,9 +4,8 @@
 			<h4>{{info.title}}</h4>
 			<p>{{info.add_time | datefmt('YYYY-MM-DD HH:mm:ss')}}，阅读：{{info.click}}次</p>
 		</div>
-		<div id="content" v-html='info.content'>
-			
-		</div>
+		<div id="content" v-html='info.content'></div>
+		<comment :newsid="id"></comment>
 	</div>
 </template>
 
@@ -14,7 +13,11 @@
 	import { Toast } from 'mint-ui';
 	import { Indicator } from 'mint-ui';
 	import apiline from '../../kits/common.js'
+	import comment from '../subcom/comment.vue'
 	export default{
+		components:{
+			comment
+		},
 		data(){
 			return {
 				id:0,
