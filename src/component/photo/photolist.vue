@@ -9,11 +9,13 @@
 		<div>
 			<ul id="imglist">
 				<li v-for='item in imgdata'>
-					<img v-lazy="item.img_url">
-					<div id="desc">
-						<h5 v-text="item.title"></h5>
-						<p v-text="item.zhaiyao"></p>
-					</div>
+					<router-link v-bind='{to:"/photo/photoinfo/"+item.id}'>
+						<img v-lazy="item.img_url">
+						<div id="desc">
+							<h5 v-text="item.title"></h5>
+							<p v-text="item.zhaiyao"></p>
+						</div>
+					</router-link>
 				</li>
 			</ul>
 		</div>

@@ -31,7 +31,6 @@ import { Toast } from 'mint-ui';
 		data(){
 			return {
 				postcontent:'',
-				newsid:0,
 				list:[],
 				pageindex:1
 			}
