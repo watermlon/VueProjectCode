@@ -12,6 +12,7 @@ import shopcar from './component/shopcar/car.vue';
 import photolist from './component/photo/photolist.vue';
 import photoinfo from './component/photo/photoinfo.vue';
 import goodslist from './component/goods/goodslist.vue';
+import goodsinfo from './component/goods/goodsinfo.vue';
 //导入vuePreview
 import VuePreview from 'vue-preview';
 //导入mint-ui
@@ -44,7 +45,8 @@ var router = new vueRouter({
 		{path:'/shopcar',component:shopcar},
 		{path:'/photo/photolist',component:photolist},
 		{path:'/photo/photoinfo/:id',component:photoinfo},
-		{path:'/goods/goodslist',component:goodslist}
+		{path:'/goods/goodslist',component:goodslist},
+		{path:'/goods/goodsinfo/:id',component:goodsinfo}
 	]
 })
 new Vue({
