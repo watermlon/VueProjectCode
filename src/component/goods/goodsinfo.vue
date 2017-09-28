@@ -12,13 +12,14 @@
 					<span>购买数量：</span>
 				</li>
 				<li class="mt10">
-					<mt-button type="default" size='small'>-</mt-button>
-					<span class="num">1</span>
-					<mt-button type="default" size='small'>+</mt-button>
+					<inputnum v-on:dataobj='getcount'></inputnum>
+<!-- 					<mt-button type="default" size='small'>-</mt-button>
+<span class="num">1</span>
+<mt-button type="default" size='small'>+</mt-button> -->
 				</li>
 				<li class="mt10">
 					<mt-button type="primary" size='small'>立即购买</mt-button>
-					<mt-button type="danger" size='small'>加入购物车</mt-button>
+					<mt-button type="danger" size='small' @click='addgood'>加入购物车</mt-button>
 				</li>
 			</ul>
 		</div>
@@ -45,15 +46,19 @@
 <script>
 import silder from '../subcom/silder.vue'
 import apiline from '../../kits/common.js'
+import inputnum from '../subcom/inputnum.vue';
+import storage from '../../kits/storage.js';
 	export default{
 		components:{
 				silder,
+				inputnum
 			},
 		data(){
 			return {
 				id:0,
 				imgs:[],
-				info:{}
+				info:{},
+				goodcount:1
 			}
 		},
 		created(){
@@ -83,6 +88,14 @@ import apiline from '../../kits/common.js'
 					}
 					this.imgs=data.message;
 				})
+			},
+			getcount(count){
+				this.goodcount = count
+				console.log(count)
+			},
+			addgood(){
+				var data={"id":this.id,"count":this.goodcount}
+				storage.setdata(data)
 			}
 		}
 	}
@@ -99,13 +112,5 @@ import apiline from '../../kits/common.js'
 		padding: 5px;
 		border:1px solid rgba(0,0,0,0.4);
 		border-radius: 5px;
-	}
-	.num{
-		display: inline-block;
-		height: 33px;
-		text-align: center;
-		line-height: 33px;
-		border: 1px solid #ccc;
-		padding: 0 10px;
 	}
 </style>

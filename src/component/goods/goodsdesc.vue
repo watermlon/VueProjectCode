@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import apiline from '../../kits/common.js'
+import apiline from '../../kits/common.js';
 	export default{
 		data(){
 			return {

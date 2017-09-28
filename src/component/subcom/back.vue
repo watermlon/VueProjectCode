@@ -1,20 +1,24 @@
 <template>
 	<div class="back">
-		<router-link v-bind="{to:url}">返回</router-link>
+		<router-link class='color' v-bind="{to:'/'+url}">&lt; 返回</router-link>
 	</div>
 </template>
 
 <script>
 	export default{
-		proto:['url']
+		props:['url']
 	}
 </script>
 
 <style scoped>
 	.back{
+		color:#fff;
 		position: fixed;
 		top: 5px;
 		left: 5px;
 		z-index: 200;
+	}
+	.color{
+		color:#fff;
 	}
 </style>

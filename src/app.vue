@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<mt-header fixed title="Vue资讯+商城项目练习"></mt-header>
+		<div class="back" @click='back' v-show='isshow'>返回</div>
 		<router-view></router-view>
 		<nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item" to="/home">
@@ -28,14 +29,22 @@ import { Header } from 'mint-ui';
 	export default{ 
 		data(){
 			return{
-
+				isshow:true
 			}
 		},
 		methods:{
-			
+			back(){
+				history.back()
+			}
 		}
 	}
 </script>
 <style scoped>
-
+.back{
+	position: fixed;
+	top: 5px;
+	left: 5px;
+	z-index: 100;
+	color: #fff;
+}
 </style>

@@ -1,7 +1,6 @@
 <template>
 	<div class="temp">
 		<commen :newsid='id'></commen>
-		}
 	</div>
 </template>
 
