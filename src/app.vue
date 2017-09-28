@@ -24,6 +24,7 @@
 </template>
 <script>
 import { Toast } from 'mint-ui';
+import { Header } from 'mint-ui';
 	export default{ 
 		data(){
 			return{
@@ -31,12 +32,10 @@ import { Toast } from 'mint-ui';
 			}
 		},
 		methods:{
-
+			
 		}
 	}
 </script>
 <style scoped>
-	.red{
-		color:red;
-	}
+
 </style>

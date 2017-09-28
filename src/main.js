@@ -13,6 +13,8 @@ import photolist from './component/photo/photolist.vue';
 import photoinfo from './component/photo/photoinfo.vue';
 import goodslist from './component/goods/goodslist.vue';
 import goodsinfo from './component/goods/goodsinfo.vue';
+import goodsdesc from './component/goods/goodsdesc.vue';
+import goodscomment from './component/goods/goodscomment.vue';
 //导入vuePreview
 import VuePreview from 'vue-preview';
 //导入mint-ui
@@ -46,7 +48,9 @@ var router = new vueRouter({
 		{path:'/photo/photolist',component:photolist},
 		{path:'/photo/photoinfo/:id',component:photoinfo},
 		{path:'/goods/goodslist',component:goodslist},
-		{path:'/goods/goodsinfo/:id',component:goodsinfo}
+		{path:'/goods/goodsinfo/:id',component:goodsinfo},
+		{path:'/goods/goodsdesc/:id',component:goodsdesc},
+		{path:'/goods/goodscomment/:id',component:goodscomment}
 	]
 })
 new Vue({

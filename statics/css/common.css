@@ -17,3 +17,30 @@ body{
 .gary{
 	color:#7E7E7E;
 }
+#back1{
+	color: #fff;
+	position: fixed;
+	top: 8px;
+	left: 5px;
+	z-index: 100;
+}
+ul,li,ol{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.ml10{
+	margin-left: 20px;
+}
+.mr10{
+	margin-right: 10px;
+}
+.mt10{
+	margin-top: 10px;
+}
+.mb10{
+	margin-bottom: 10px;
+}
+.gomeImgLoad{
+	width: 100%;
+}
